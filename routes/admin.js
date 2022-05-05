@@ -1,6 +1,7 @@
 //Import required modules
 const express = require('express');
 const path = require('path');
+const rutDir = require('../util/path');
 
 
 //Creating routing from express
@@ -9,7 +10,7 @@ const router = express.Router();
 router.get('/add-product',(req, res, next)=>{
  	
 	//Sending response to the webpage
- 	res.sendFile(path.join(__dirname,'../', 'views', 'add-product.html'));
+ 	res.sendFile(path.join(rutDir,'..', 'views', 'add-product.html'));
  	
 	//This allow the request to continue execution to the next middleware
  	// next();

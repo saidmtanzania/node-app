@@ -10,6 +10,7 @@ const app = express();
 //Importing routing files form routes folder to main app.js files
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
+const rutDir = require('./util/path');
 
 //Google about urlencoded
 app.use(bodyParser.urlencoded({extended:true}));
@@ -21,7 +22,7 @@ app.use(shopRoutes);
 
 //Sending 404 for an input data
 app.use((req, res, next)=>{
-	res.status(404).sendFile(path.join(__dirname, 'views', '404.html'));
+	res.status(404).sendFile(path.join(rutDir, 'views', '404.html'));
 })
 //Loading Homopage for ant request comes with '/'
 
