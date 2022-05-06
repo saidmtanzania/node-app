@@ -1,3 +1,4 @@
+// jshint esversion:6
 //Import usable modules
 const express = require('express');
 const bodyParser = require('body-parser');

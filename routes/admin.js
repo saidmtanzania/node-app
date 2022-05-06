@@ -1,3 +1,4 @@
+// jshint esversion:6
 //Import required modules
 const express = require('express');
 const path = require('path');
