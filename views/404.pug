@@ -6,7 +6,8 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title #{docTitle}
         link(rel="stylesheet", href="/css/main.css")
-        block styles
+        link(rel="stylesheet", href="/css/product.css")
+        link(rel="stylesheet", href="/css/forms.css")
     body 
         header.main-header
             nav.main-header__nav 
@@ -16,4 +17,5 @@ html(lang="en")
                     li.main-header__item
                         a(href="/admin/add-product") Add Product
         main 
-            block content
+            h1 404
+            p Page Not Found!
