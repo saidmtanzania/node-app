@@ -1,26 +1,16 @@
-// jshint esversion:6
-//Import required modules
-const express = require('express');
+//jshint esversion:6
 const path = require('path');
-const rutDir = require('../util/path');
-
-
-//Creating routing from express
+const express = require("express");
+const rootDir = require("../util/path");
 const router = express.Router();
- 
-router.get('/add-product',(req, res, next)=>{
- 	
-	//Sending response to the webpage
- 	res.sendFile(path.join(rutDir,'..', 'views', 'add-product.html'));
- 	
-	//This allow the request to continue execution to the next middleware
- 	// next();
- });
- // Receiving /post from input data
-router.post('/add-product',(req, res, next)=>{
- 	console.log(req.body);
- 	res.redirect('/');
- })
- 
-// Exporting routing function
- module.exports = router;
+
+router.get("/add-product", (req, res, next) => {
+  res.sendFile( path.join(rootDir, 'views', 'add-product.html'));
+});
+
+router.post("/add-product", (req, res) => {
+  console.log(req.body);
+  res.redirect("/");
+});
+
+module.exports = router;

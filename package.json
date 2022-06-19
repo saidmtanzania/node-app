@@ -3,6 +3,7 @@
     "body-parser": "^1.20.0",
     "express": "^4.18.1"
   },
+<<<<<<< HEAD
   "name": "nodejs",
   "description": "Self Learning NodeJS",
   "version": "1.0.0",
@@ -13,4 +14,15 @@
   },
   "author": "saidmtanzania",
   "license": "ISC"
+=======
+  "name": "app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+>>>>>>> 6ec39e4 (initial changes)
 }
