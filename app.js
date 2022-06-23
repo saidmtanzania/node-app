@@ -2,21 +2,12 @@
 const path = require('path');
 const express = require('express'); 
 const bodyParser = require('body-parser');
-<<<<<<< HEAD
-const expressHbs = require('express-handlebars');
-
-
-const app = express();
-app.engine('hbs', expressHbs());
-app.set('view engine', 'hbs');
-=======
 const ehbs = require('express-handlebars');
 
 const app = express();
 
 // app.engine('hbs', ehbs.engine({layoutsDir: 'views/layouts', defaultLayout: 'main-layouts', extname: 'hbs'}));
 app.set('view engine', 'ejs');
->>>>>>> main
 app.set('views', 'views');
 
 const adminData = require('./routes/admin');
