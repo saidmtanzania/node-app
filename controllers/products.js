@@ -6,7 +6,7 @@ const Product = require('../models/product');
 exports.getAddProducts = (req, res, next) => {
   // res.sendFile( path.join(rootDir, 'views', 'add-product.html'));
   res.render("admin/add-product", {
-    docTitle: "Add Product",
+    docTitle: "/admin/add-product",
     path: "admin",
     activeProduct: true,
     productCSS: true,
@@ -27,7 +27,7 @@ exports.getProducts = (req, res, next) => {
     res.render("shop/product-list", {
       prods: products,
       docTitle: "My Shop",
-      path: "shop",
+      path: "/",
       hasProduct: products.length > 0,
       activeShop: true,
       productCSS: true,
