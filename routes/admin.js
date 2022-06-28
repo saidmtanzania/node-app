@@ -5,14 +5,10 @@ const productsController = require("../controllers/products");
 const router = express.Router();
 
 
-
 router.get("/add-product", productsController.getAddProducts);
 
 router.get("/products");
 
 router.post("/add-product", productsController.postAddProducts);
-
-
-
 
 module.exports = router;
