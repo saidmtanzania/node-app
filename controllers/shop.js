@@ -2,7 +2,7 @@
 const Product = require('../public/css/product');
 
 
-//Shop Home Page
+//Shopping Home Page
 exports.getIndex = (req, res, next) => {
   Product.fetchAll((products) => {
     res.render("shop/index", {
@@ -14,7 +14,7 @@ exports.getIndex = (req, res, next) => {
 };
 
 
-//Shop List of Product Page
+//Shopping List of Product Page
 exports.getProducts = (req, res, next) => {
   Product.fetchAll( products => {
     res.render("shop/product-list", {
@@ -26,7 +26,7 @@ exports.getProducts = (req, res, next) => {
 };
 
 
-// Shop Cart Page
+// Shopping Cart Page
 exports.getCarts = (req, res, next) => {
     res.render("shop/cart", {
       // prods: products,
@@ -35,6 +35,7 @@ exports.getCarts = (req, res, next) => {
     });
 };
 
+//Shopping Orders Page
 exports.getOrders = (req, res, next) => {
   res.render("shop/orders", {
     // prods: products,
@@ -44,7 +45,7 @@ exports.getOrders = (req, res, next) => {
 };
 
 
-//Shop Checkout Page
+//Shopping Checkout Page
 exports.getCheckouts = (req, res, next) => {
   res.render("shop/cart", {
     prods: products,
