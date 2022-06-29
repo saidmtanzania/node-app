@@ -1,5 +1,5 @@
 // jshint esversion:6
-const Product = require('../models/product');
+const Product = require('../public/css/product');
 
 
 //Shop Home Page
@@ -27,7 +27,7 @@ exports.getProducts = (req, res, next) => {
 
 
 // Shop Cart Page
-exports.getCart = (req, res, next) => {
+exports.getCarts = (req, res, next) => {
     res.render("shop/cart", {
       // prods: products,
       docTitle: "Shop Cart",
@@ -35,9 +35,17 @@ exports.getCart = (req, res, next) => {
     });
 };
 
+exports.getOrders = (req, res, next) => {
+  res.render("shop/orders", {
+    // prods: products,
+    docTitle: "Shop Orders",
+    path: "/orders",
+  });
+};
+
 
 //Shop Checkout Page
-exports.getCheckout = (req, res, next) => {
+exports.getCheckouts = (req, res, next) => {
   res.render("shop/cart", {
     prods: products,
     docTitle: "Shop Checkout",
