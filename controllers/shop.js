@@ -47,7 +47,7 @@ exports.getOrders = (req, res, next) => {
 
 //Shopping Checkout Page
 exports.getCheckouts = (req, res, next) => {
-  res.render("shop/cart", {
+  res.render("shop/checkout", {
     prods: products,
     docTitle: "Shop Checkout",
     path: "/checkout"
