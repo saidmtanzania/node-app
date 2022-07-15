@@ -1,5 +1,5 @@
 // jshint esversion:6
-const Product = require('../public/css/product');
+const Product = require('../models/product');
 
 
 //Shopping Home Page

@@ -1,5 +1,5 @@
 //jshint esversion:6
-const Product = require("../public/css/product");
+const Product = require("../models/product");
 
 exports.getAddProducts = (req, res, next) => {
   // res.sendFile( path.join(rootDir, 'views', 'add-product.html'));
