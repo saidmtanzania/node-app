@@ -28,9 +28,10 @@ exports.getProducts = (req, res, next) => {
 exports.getProduct = (req, res, next) => {
   const prodId = req.params.productId;
   Product.findById(prodId, product => {
+    res.render('shop/product-detail',{prod:product});
     console.log(product);
   });
-  res.redirect('/');
+  
 };
 
 // Shopping Cart Page
