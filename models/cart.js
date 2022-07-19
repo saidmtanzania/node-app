@@ -26,7 +26,8 @@ module.exports = class Cart {
           //Analyze the cart => Find existing products
           const existingProduct = cart.products.find((prod) => prod.id === id);
           let updatedProduct;
-
+          
+          // Add new Product/increase quantity
           if (existingProduct) {
             updatedProduct = { ...existingProduct };
             updatedProduct.qty = updatedProduct.qty + 1;
@@ -36,6 +37,5 @@ module.exports = class Cart {
           cart.totalPrice = cart.totalPrice + productPrice;
 
         });
-        // Add new Product/increase quantity
     }
 };
