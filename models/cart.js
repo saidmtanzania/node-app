@@ -14,7 +14,7 @@ module.exports = class Cart {
     //     this.products = [];
     //     this.totalPrice = 0;
     // }
-    static addProduct(id){
+    static addProduct(id, productPrice){
 
         //Fetch the previous cart
         fs.readFile(p, (err, fileContent) => {
@@ -26,10 +26,15 @@ module.exports = class Cart {
           //Analyze the cart => Find existing products
           const existingProduct = cart.products.find((prod) => prod.id === id);
           let updatedProduct;
+
           if (existingProduct) {
             updatedProduct = { ...existingProduct };
             updatedProduct.qty = updatedProduct.qty + 1;
+          }else{
+            updatedProduct = { id: id, qty: 1};
           }
+          cart.totalPrice = cart.totalPrice + productPrice;
+
         });
         // Add new Product/increase quantity
     }
