@@ -42,6 +42,11 @@ exports.getCarts = (req, res, next) => {
     });
 };
 
+exports.postCarts = (req, res, next) => {
+  const prodId = req.body.productId;
+  console.log(prodId);
+  res.redirect('/cart');
+};
 //Shopping Orders Page
 exports.getOrders = (req, res, next) => {
   res.render("shop/orders", {
