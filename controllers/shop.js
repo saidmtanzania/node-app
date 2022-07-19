@@ -1,5 +1,6 @@
 // jshint esversion:6
 const Product = require('../models/product');
+const Cart = require('../models/cart');
 
 
 //Shopping Home Page
@@ -44,7 +45,9 @@ exports.getCarts = (req, res, next) => {
 
 exports.postCarts = (req, res, next) => {
   const prodId = req.body.productId;
-  console.log(prodId);
+  Product.findById(prodId, product => {
+    Cart.addProduct(prodId, product.price);
+  });
   res.redirect('/cart');
 };
 //Shopping Orders Page
