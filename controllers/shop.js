@@ -42,14 +42,14 @@ exports.getCarts = (req, res, next) => {
       path: "/cart"
     });
 };
-
 exports.postCarts = (req, res, next) => {
   const prodId = req.body.productId;
-  Product.findById(prodId, product => {
-    Cart.addProduct(prodId, product.price);
+  Product.findById(prodId, (product) => {
+    Cart.addProduct(prodId, product.Price);
   });
-  res.redirect('/cart');
+  res.redirect("/cart");
 };
+
 //Shopping Orders Page
 exports.getOrders = (req, res, next) => {
   res.render("shop/orders", {
