@@ -6,9 +6,7 @@ exports.getAddProducts = (req, res, next) => {
   res.render("admin/edit-product", {
     docTitle: "Adding Product",
     path: "/admin/add-product",
-    activeProduct: true,
-    productCSS: true,
-    formsCSS: true,
+    editing: false
   });
 };
 
@@ -21,6 +19,26 @@ exports.postAddProducts = (req, res, next) => {
   const product = new Product(title, imageUrl, description, price);
   product.save();
   res.redirect("/");
+};
+
+exports.getEditProducts = (req, res, next) => {
+  // res.sendFile( path.join(rootDir, 'views', 'add-product.html'));
+  const editMode = req.query.edit;
+  if(!editMode){
+    return res.redirect("/");
+  }
+  const prodId = req.params.productId;
+  Product.findById(prodId, product => {
+    if(!product){
+      res.redirect("/");
+    }
+    res.render("admin/edit-product", {
+    docTitle: "Edit Product",
+    path: "/admin/edit-product",
+    editing: editMode,
+    product: product
+  });
+  });
 };
 
 exports.getProducts = (req, res, next) => {
