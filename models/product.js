@@ -27,7 +27,6 @@ module.exports = class Product {
         this.price = price;
     }
     save(){
-        // products.push(this);
         this.id = Math.random().toString();
         getProductsFromFile( products => {
         products.push(this);
@@ -35,7 +34,6 @@ module.exports = class Product {
           console.log(err);
         });
        }); 
-        // fs.readFile(p,(err, fileContent) => {});
         
     }
 
@@ -44,8 +42,8 @@ module.exports = class Product {
     }
 
     static findById(id, cb){
-      getProductsFromFile(products =>{
-        const product = products.find(p => p.id === id);
+      getProductsFromFile(products => {
+        const product = products.find(p => p.id == id);
         cb(product);
       });
     }
